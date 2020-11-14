@@ -34,7 +34,7 @@ export default function Home() {
             <Card.Body>
             <h3 className="text-center mb-4"> Your Profile </h3>
             {error && <Alert varient="danger">{error}</Alert>}
-            
+           {currentUser.uid}
             
             </Card.Body>
         </Card>

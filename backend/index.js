@@ -2,8 +2,6 @@
 //sequelize init (this adds the models and migrations and stuff)
 //sequelize model:create --name order_history --attributes title:string
 //^^That makes the models and creates the migrations that sequelize needs. Make one for each table.
-import checkAuth from "./routes/authMiddleware"
-
 
 const express = require("express");
 const app = express();
@@ -60,40 +58,6 @@ app.use("/", apiRoutes);
 
 //DB Connection
 require("./models/index");
-
-//firebase
-
-import * as admin from 'firebase-admin';
-
-admin.initializeApp({
-  credential: admin.credential.applicationDefault(),
-  databaseURL: 'https://<DATABASE_NAME>.firebaseio.com'
-});
-
-export default admin
-
-import admin from './firebase-service';
-
-export const createUser = async (req, res) => {
-const {
-      email,
-      phoneNumber,
-      password,
-      firstName,
-      lastName,
-      photoUrl
-    } = req.body;
-
-    const user = await admin.auth().createUser({
-      email,
-      phoneNumber,
-      password,
-      displayName: `${firstName} ${lastName}`,
-      photoURL: photoUrl
-    });
-
-    return res.send(user);
-}
 
 
 
