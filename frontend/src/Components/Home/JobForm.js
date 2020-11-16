@@ -3,6 +3,8 @@ import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
+import { auth } from "../../firebase";
+
 
 
 
@@ -22,12 +24,25 @@ function JobForm() {
         }
         console.log(postJob);
 
-        fetch('http://localhost:8000/job-apps',
+       
+        console.log(auth.currentUser)
+        auth.currentUser.getIdToken(/* forceRefresh */ true).then(function(idToken) {
+          console.log(idToken)
+            fetch('http://localhost:8000/job-apps',
             {
                 body: JSON.stringify(postJob),
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' }
+                headers: { 'Content-Type': 'application/json',
+                "Authorization": `Bearer ${idToken}` }
             })
+
+
+          }).catch(function(error) {
+            // Handle error - look for firebase errors i can use later
+            console.log(error)
+          });
+
+        
 
     }
 
@@ -42,7 +57,7 @@ function JobForm() {
                     Company Name
               </Form.Label>
                 <Col sm={10}>
-                    <Form.Control onChange={handleChange} type="text" placeholder="Company Name" id="company" />
+                    <Form.Control onChange={handleChange} type="text" placeholder="Company Name" id="company" required/>
                 </Col>
             </Form.Group>
 
@@ -51,7 +66,7 @@ function JobForm() {
                     Job Title
               </Form.Label>
                 <Col sm={10}>
-                    <Form.Control onChange={handleChange} type="text" placeholder="Job Title" id="jobtitle" />
+                    <Form.Control onChange={handleChange} type="text" placeholder="Job Title" id="jobtitle" required />
                 </Col>
             </Form.Group>
 
@@ -60,7 +75,7 @@ function JobForm() {
                     Date Applied
               </Form.Label>
                 <Col sm={10}>
-                    <Form.Control onChange={handleChange} type="date" placeholder="xxxx-xx-xx" id="date" />
+                    <Form.Control onChange={handleChange} type="date" placeholder="xxxx-xx-xx" id="date" required />
                 </Col>
             </Form.Group>
 
@@ -69,7 +84,7 @@ function JobForm() {
                     City
               </Form.Label>
                 <Col sm={10}>
-                    <Form.Control onChange={handleChange} type="text" placeholder="City" id="city" />
+                    <Form.Control onChange={handleChange} type="text" placeholder="City" id="city" required />
                 </Col>
             </Form.Group>
         
