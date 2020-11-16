@@ -11,14 +11,13 @@ function Signin() {
   const [loading, setLoading] = useState(false);
   const history = useHistory()
 
-  async function handleSubmit(e) {
+  function handleSubmit(e) {
     e.preventDefault();
     
     try {
       setError("")
       setLoading(true)
-      await signin(emailRef.current.value, passwordRef.current.value);
-      console.log("I shouldn't be redirecting")
+     signin(emailRef.current.value, passwordRef.current.value);
       history.push('/Home')
       
     } catch (error) {

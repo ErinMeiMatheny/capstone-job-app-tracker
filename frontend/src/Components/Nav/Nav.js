@@ -8,7 +8,7 @@ function Nav() {
 
 
   return (
-    <nav>
+    <nav className="nav-main">
       {/* logo */}
       <Link to="/">
         <img
