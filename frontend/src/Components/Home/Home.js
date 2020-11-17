@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Card, Button, Alert } from "react-bootstrap"
 import { useAuth } from "../../Context/AuthContext"
 import { Link, useHistory } from "react-router-dom"
+import JobAppCards from "../JobAppCards"
 
 
 
@@ -34,9 +35,7 @@ export default function Home() {
             <Card.Body>
             <h3 className="text-center mb-4"> Your Profile </h3>
             {error && <Alert varient="danger">{error}</Alert>}
-            
-            
-            </Card.Body>
+                        </Card.Body>
         </Card>
         <div className="w-110 text-center mt3">
         <Button varient="link" onClick={handleLogout}>Log out</Button>
