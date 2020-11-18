@@ -3,6 +3,7 @@ import { Card, Button, Alert } from "react-bootstrap"
 import { useAuth } from "../../Context/AuthContext"
 import { Link, useHistory } from "react-router-dom"
 import JobForm from './JobForm';
+import JobCards from '../JobAppCards'
 
 
 
@@ -41,6 +42,7 @@ export default function Home() {
         <br></br>
         <JobForm></JobForm>
 
+        <JobCards></JobCards>
 
 
 

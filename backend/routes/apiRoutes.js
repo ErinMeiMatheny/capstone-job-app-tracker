@@ -5,8 +5,6 @@ const db = require("../models");
 const { Op } = require("sequelize");
 const Sequelize = require("sequelize");
 
-
-
 //Backend running
 router.get("/", (req, res) => {
   res.send("Backend running!");
