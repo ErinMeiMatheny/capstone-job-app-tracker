@@ -14,7 +14,7 @@ router.get("/", (req, res) => {
 router.get("/job-apps/:id", (req, res) => {
   db.job_track.findAll({
     where: {
-      user_id: req.params.id,
+      user_id: req.userId
     },
     
   })
@@ -26,8 +26,13 @@ router.get("/job-apps/:id", (req, res) => {
 
 //add jobs for user
 router.post("/job-apps", (req, res) => {
+
+  // 
+  // if(!req.userId) {
+  //   res.status.send("this can be a string of what we want to communcatee")
+  // }
   db.job_track.create({
-    user_id: req.body.user_id,
+    user_id: req.userId,
     company_name: req.body.company_name,
     job_title: req.body.job_title,
     date_applied: req.body.date_applied,

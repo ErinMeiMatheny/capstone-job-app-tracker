@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   job_track.init({
-    user_id: DataTypes.INTEGER,
+    user_id: DataTypes.STRING,
     company_name: DataTypes.STRING,
     job_title: DataTypes.STRING,
     date_applied: DataTypes.DATEONLY,

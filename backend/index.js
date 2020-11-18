@@ -19,6 +19,36 @@ const Sequelize = require("sequelize");
 
 app.use(cookieParser());
 
+//firebase Authenication Middleware
+const admin = require('firebase-admin');
+const serviceAccount = require("./firebase-admin-sdk.json");
+
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+  databaseURL: "https://jobtracker-29739.firebaseio.com"
+});
+
+async function firebaseAuthMiddleware(req,res,next) {
+  
+
+  if(req.headers?.authorization?.startsWith("Bearer ")){
+    const idToken = req.headers.authorization.split("Bearer ")[1]
+    try {
+      const decodedToken = await admin.auth().verifyIdToken(idToken)
+      req["userId"] = decodedToken.uid
+
+    } catch (error) {
+      res.status(403).send(error)
+    }
+  } else {
+    res.status(403).send("user must be logged in")
+  } 
+  next()
+}
+
+app.use(firebaseAuthMiddleware)
+
+
 const myDatabase = new Sequelize(
 
   {
