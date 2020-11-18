@@ -11,7 +11,8 @@ router.get("/", (req, res) => {
 });
 
 //get jobs for user
-router.get("/job-apps/:id", (req, res) => {
+router.get("/job-apps/", (req, res) => {
+  console.log(req.userId)
   db.job_track.findAll({
     where: {
       user_id: req.userId
@@ -20,7 +21,7 @@ router.get("/job-apps/:id", (req, res) => {
   })
 
     .then((response) => res.send(response))
-    .catch((error) => res.send("error"))
+    .catch((error) => console.log(error))
 })
 
 
