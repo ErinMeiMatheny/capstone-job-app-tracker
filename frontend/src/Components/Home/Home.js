@@ -4,7 +4,6 @@ import { useAuth } from "../../Context/AuthContext"
 import { Link, useHistory } from "react-router-dom"
 import JobForm from './JobForm';
 import JobCards from '../JobAppCards'
-import ApplicationHistory from '../ApplicationHistory'
 
 
 
@@ -27,7 +26,6 @@ export default function Home() {
         </Card>
         <br></br>
         <JobForm></JobForm>
-        <ApplicationHistory></ApplicationHistory>
         <JobCards></JobCards>
         </>
 

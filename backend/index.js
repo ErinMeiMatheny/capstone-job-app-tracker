@@ -1,18 +1,19 @@
 //Things to install: npm init, express, sequelize, pg, pg-hstore, body-parser, cors (--save is not required with npm install these days)
 //sequelize init (this adds the models and migrations and stuff)
 //sequelize model:create --name order_history --attributes title:string
-//^^That makes the models and creates the migrations that sequelize needs. Make one for each table.
-
+//^^That makes the models and 
+// creates the migrations that sequelize needs. Make one for each table.
 const express = require("express");
 const app = express();
+const http = require('http').createServer(app);
+const io = require('socket.io')(http);
+
 const port = process.env.PORT || 8000;
 
 const cors = require("cors");
 app.use(cors());
 
 
-// const expressSession = require("express-session");
-// const SessionStore = require("express-session-sequelize")(expressSession.Store);
 
 const cookieParser = require("cookie-parser");
 const Sequelize = require("sequelize");
@@ -89,16 +90,34 @@ app.use("/", apiRoutes);
 //DB Connection
 require("./models/index");
 
+io.on('connection', (socket) => {
+  console.log("socket is", socket)
+  console.log('a user connected');
+});
 //
 db.sequelize
   .sync()
   .then(() => {
-    app.listen(port, () => {
-      console.log(`Listening on port ${port}.`);
-    });
+    // app.listen(port, () => {
+    //   console.log(`Listening on port ${port}.`);
+    // });
+    console.log("hey we're connected!")
+    // console.log("io on is", io.on())
+    // io.on('connection', (socket) => {
+    //   console.log("socket is", socket)
+    //   console.log('a user connected');
+    // });
   })
   .catch((err) => {
     console.error("Unable to connect to the database:", err);
 
   });
 
+http.listen(port, () => {
+  console.log("listening on port", port)
+})
+
+io.on('connection', (socket) => {
+console.log("socket is", socket)
+console.log('a user connected');
+});
