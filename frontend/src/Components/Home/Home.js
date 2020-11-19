@@ -4,6 +4,7 @@ import { useAuth } from "../../Context/AuthContext"
 import { Link, useHistory } from "react-router-dom"
 import JobForm from './JobForm';
 import JobCards from '../JobAppCards'
+import ApplicationHistory from '../ApplicationHistory'
 
 
 
@@ -11,23 +12,8 @@ import JobCards from '../JobAppCards'
 export default function Home() {
 
     const [error, setError] = useState("")
-    const { currentUser, signOut } = useAuth()
-    const { history } = useHistory()
-
-    async function handleLogout() {
-
-        setError("")
-
-        try {
-            await signOut()
-            history.push("/signin")
-        } catch (error) {
-            setError("Failed signout")
-        }
-    }
-    
-
-
+    // const { currentUser, signOut } = useAuth()
+    // const { history } = useHistory()    
     return (
 
         <>
@@ -41,14 +27,8 @@ export default function Home() {
         </Card>
         <br></br>
         <JobForm></JobForm>
-
+        <ApplicationHistory></ApplicationHistory>
         <JobCards></JobCards>
-
-
-
-        <div className="w-110 text-center mt3">
-        <Button varient="link" onClick={handleLogout}>Log out</Button>
-        </div>
         </>
 
     )

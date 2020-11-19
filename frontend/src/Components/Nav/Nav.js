@@ -1,11 +1,18 @@
 import React from "react";
 import "./Nav.css";
 import { Link } from "react-router-dom";
+import { useAuth } from "../../Context/AuthContext"
+import { auth } from "../../firebase";
+import firebase from "../../firebase"
+import Logout from "../../Components/Logout/Logout"
+
+
 
 
 
 function Nav() {
 
+var user = firebase.auth().currentUser
 
   return (
     <nav className="nav-main">
@@ -39,7 +46,8 @@ function Nav() {
            
           </div>
         </Link>
-       
+        {user && <Logout />}
+
         
       </div>
     </nav>

@@ -14,13 +14,15 @@ router.get("/", (req, res) => {
 router.get("/job-apps/:id", (req, res) => {
   db.job_track.findAll({
     where: {
-      user_id: req.userId
+      user_id: req.params.id
     },
     
   })
-
-    .then((response) => res.send(response))
-    .catch((error) => res.send("error"))
+    .then((response) => {
+console.log("hi friend this works")   
+res.send(response)   
+    })
+    .catch((error) => console.log(error))
 })
 
 

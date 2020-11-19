@@ -9,6 +9,7 @@
     "axios": "^0.21.0",
     "bootstrap": "^4.5.3",
     "firebase": "^8.0.1",
+    "firebase-react-hooks": "^0.7.2",
     "jquery": "^3.5.1",
     "react": "^16.8.0",
     "react-bootstrap": "^1.4.0",
