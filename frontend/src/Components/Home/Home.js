@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Card, Button, Alert } from "react-bootstrap"
+import { Container, Card, Col, CardColumns, Row, Button, Alert } from "react-bootstrap"
 import { useAuth } from "../../Context/AuthContext"
 import { Link, useHistory } from "react-router-dom"
 import JobForm from './JobForm';
@@ -25,31 +25,38 @@ export default function Home() {
             setError("Failed signout")
         }
     }
-    
+
 
 
     return (
 
-        <>
-        <Card>
-            <Card.Body>
-            <h3 className="text-center mb-4"> Your Profile </h3>
-            {error && <Alert varient="danger">{error}</Alert>}
-        
+        <Container>
             
-            </Card.Body>
-        </Card>
-        <br></br>
-        <JobForm></JobForm>
+            <Card>
+                <Card.Body>
+                    <h3 className="text-center mb-4"> Welcome Back {currentUser.email}! </h3>
+                    {error && <Alert varient="danger">{error}</Alert>}
+                    <div className="w-110 text-center mt3">
+                        <Button varient="link" onClick={handleLogout}>Log out</Button>
+                    </div>
+                </Card.Body>
+            </Card>
+            <br></br>
+            
+            <Row> 
+                <Col className="col-8">
+            <JobCards></JobCards>
+                </Col>
+                <Col className="col-4">
+            <JobForm></JobForm>
+                </Col>
+            </Row> 
 
-        <JobCards></JobCards>
+            </Container>
 
 
 
-        <div className="w-110 text-center mt3">
-        <Button varient="link" onClick={handleLogout}>Log out</Button>
-        </div>
-        </>
+    
 
     )
 }
