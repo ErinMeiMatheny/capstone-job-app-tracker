@@ -11,17 +11,23 @@ router.get("/", (req, res) => {
 });
 
 //get jobs for user
-router.get("/job-apps/:id", (req, res) => {
+router.get("/job-apps/", (req, res) => {
+  console.log(req.userId)
   db.job_track.findAll({
     where: {
       user_id: req.params.id
     },
     
   })
+<<<<<<< HEAD
     .then((response) => {
 console.log("hi friend this works")   
 res.send(response)   
     })
+=======
+
+    .then((response) => res.send(response))
+>>>>>>> fd61ba61ef3c57d4ac933a4dd04c0930ae7fd1fd
     .catch((error) => console.log(error))
 })
 
