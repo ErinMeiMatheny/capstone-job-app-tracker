@@ -1,19 +1,17 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import { auth } from "../../firebase";
 
-
-
-
-
 function JobForm() {
+
+
 
     function handleSubmit(e) {
         e.preventDefault();
-
+        
         let postJob = {
 
             company_name: e.target.company.value,
@@ -40,17 +38,16 @@ function JobForm() {
           }).catch(function(error) {
             // Handle error - look for firebase errors i can use later
             console.log(error)
+            
           });
-
-        
 
     }
 
     function handleChange(event) {
     };
-
+    
     return (
-
+        
         <Form className="m-3" onSubmit={handleSubmit}>
             <Form.Group as={Row} >
                 <Form.Label column sm={2}>
