@@ -3,7 +3,6 @@ import { Container, Card, Col, CardColumns, Row, Button, Alert } from "react-boo
 import { useAuth } from "../../Context/AuthContext"
 import { Link, useHistory } from "react-router-dom"
 import JobForm from './JobForm';
-import JobCards from '../JobAppCards'
 
 
 
@@ -31,7 +30,7 @@ export default function Home() {
     return (
 
         <Container>
-            
+
             <Card>
                 <Card.Body>
                     <h3 className="text-center mb-4"> Welcome Back {currentUser.email}! </h3>
@@ -42,21 +41,18 @@ export default function Home() {
                 </Card.Body>
             </Card>
             <br></br>
-            
-            <Row> 
-                <Col className="col-8">
-            <JobCards></JobCards>
+
+            <Row>
+                <Col className="col-12">
+                    <JobForm></JobForm>
                 </Col>
-                <Col className="col-4">
-            <JobForm></JobForm>
-                </Col>
-            </Row> 
+            </Row>
 
-            </Container>
+        </Container>
 
 
 
-    
+
 
     )
 }
