@@ -1,26 +1,291 @@
-.main-page {
-    max-width: 2000px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-  .main-page-image {
-    width: 100%;
-    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
-    z-index: -1;
-    margin-bottom: -100px;
-  }
-  
-  .main-page-row {
-    display: flex;
-    z-index: 1;
-    margin-left: 5px;
-    margin-right: 5px;
-  }
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@300&display=swap');
 
-.job_tracker_title{
+
+.main-page{
+  position: relative;
+}
+
+/* .landing {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: table;
+  z-index: -1;
+}
+.home-wrap {
+  clip: rect(0, auto, auto, 0);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;;
+} */
+.backgroundImageOne {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center center;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  will-change: transform;
+  z-index: -1;
+  background-image: url("../../assets/business.png");
+  background-color: white;
+}
+
+.backgroundImageTwo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center center;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  will-change: transform;
+  z-index: -2;
+  background-image: url("../../assets/table.png");
+  background-color: white;
+}
+
+
+/*--- iOS Fixed Background Image --*/
+.fixed-background {
+  position: relative;
+  width: 100%;
+}
+.fixed-wrap {
+  clip: rect(0, auto, auto, 0);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -999!important;
+}
+.fixed {
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  will-change: transform;
+}
+
+
+
+body {
+    overflow-x: hidden;
+    font-family: 'Josefin Slab', serif;
+    color: #7f1f7f;
+    height: auto;
+    /*display: flex;*/
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    /* background: linear-gradient(rgb(156, 221, 230), rgb(48,62,143)); */
+    background-color: rgb(159,159,173);
+    
+}
+
+img {
+    height: 2rem;
+}
+
+#home > div.caption.text-center > a{
+    color: rgb(146, 91, 146);
+    border: purple;
+    font-size: 2rem;
+}
+
+.navbar{
+  text-transform: uppercase;
+  font-size: 800;
+  font-size: 1.3rem;
+  letter-spacing: .1rem;
+  background: rgba(0 0,0,.5)!important;
+
+}
+
+
+
+.navbar-dark .navbar-nav .nav-link {
+  color: white;
+  padding-top: .6rem;
+}
+
+.navbar-dark .navbar-nav .nav-link.active,
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: #cb3cbf
+}
+
+
+.narrow {
+  width: 80%;
+  margin: 2rem auto;
+  padding-top: 3rem;
+}
+
+.narrow h2 {
+  font-size: 4rem;
+  padding-bottom: 5rem;
+  text-transform: uppercase;
+}
+
+
+
+
+.leadText{
+  text-shadow: 0 0 50px hsla(0,0%,0%,.4);
+}
+
+
+.caption {
+    
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+ height: 100vh;
+  /* Z index will let me display over content just FYI */
+  z-index: 1;
+  color: white;
+  text-transform: uppercase;
+  font-size: 8rem;
+ 
+}
+
+.caption h1 {
+  display: flex;
+  margin-left: 5%;
+  font-size: 3.0rem;
+  font-weight: 800;
+  letter-spacing: .05rem;
+  color: rgb(161,112,157);
+  
+}
+
+.caption h4 {
+display: flex;
+margin-left: 2.5%;
+  font-size: 1.25rem;
+  text-shadow: .1rem, .1rem, .6rem black;
+  color: rgb(164,77,139);
+  border-color: purple;
+}
+
+
+
+btn-lg {
+ font-size: 2rem;
+ border-radius: 0;
+ 
+}
+
+.jumbotron {
+  border-radius: 0;
+}
+
+.fixed {
+  background-image: url("../../assets/table.png");
+  z-index: -1;
+}
+
+#dark{
+  background-color: rgba(0,0,0, .6);
+}
+
+.fixed-background {
+  padding-top: 3rem;
+  color: white;
+  padding-bottom: 5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+#home > div.team > div > div.row.dark.text-center > div.col-12.text-center > h3 {
+  text-transform: uppercase;
+  margin-top: 3rem;
+  margin-bottom: 4rem;
+  font-size: 4rem;
+}
+
+#footer{
+  background-color: #343a40;
+  color: white;
+  padding: 2rem 0 2rem;
+  margin-top: 2rem;
+}
+
+#teamRow {
+  margin: 10%
+}
+
+
+
+.card-title {
+  text-decoration: underline;
+} 
+
+.dropdown-item:hover{
+  background-color: rgb(81, 199, 235);
+}
+.btn {
+  margin-left: 5px;
+  margin-top: 5%;
+}
+
+.card {
+  margin: 0 auto;
+}
+
+.col {
+  margin: 0 auto;
+}
+
+.mb-3{
+  height: 200px;
+}
+
+
+
+.card-body{
   display: flex;
   justify-content: center;
-  margin-top: -500px;
-  z-index: 50
+  flex-wrap: wrap;
+} 
+
+.container-fluid {
+  background-color: rgba(0,0,0, .1);
+}
+
+.spanTrackingLink{
+  display: inline-block;
+}
+
+.spanTracking{
+
+font-weight: 600;
+margin-top: 60px;
+font-size: 30px;
+color: rgb(164,77,139);
+
+
+}
+
+.LandingRowTwo{
+  display: flex;
+  margin-top: -40px;
+  padding-top: 300px;
+  padding-bottom: 300px;
+
 }

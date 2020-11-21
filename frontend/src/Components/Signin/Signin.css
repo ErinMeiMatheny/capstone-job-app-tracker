@@ -4,3 +4,16 @@
     align-content: center;
     color:beige ;
 }
+
+.formControl{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+   
+}
+
+.cardClass{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
