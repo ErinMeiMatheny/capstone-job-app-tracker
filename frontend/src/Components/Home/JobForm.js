@@ -150,7 +150,7 @@ function JobForm() {
                                                 {job.date_applied}
                                             </Card.Text>
                                             <DropdownButton id="dropdown-item-button" title="Options">
-                                                <Dropdown.Item as="button" onClick={() => { employerResponse(job.id) }} data-toggle="button" aria-pressed="false" autocomplete="off">Response?</Dropdown.Item>
+                                                <Dropdown.Item as="button" onClick={() => { employerResponse(job.id) }} data-toggle="button" aria-pressed="false" autoComplete="off">Response?</Dropdown.Item>
                                                 <Dropdown.Item as="button" onClick={() => { deleteJob(job.id) }}>Delete</Dropdown.Item>
 
                                             </DropdownButton>
