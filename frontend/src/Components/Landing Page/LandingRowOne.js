@@ -2,7 +2,7 @@ import React from 'react'
 import "./LandingPage.css"
 import "./LandingRowOne.css"
 import { Jumbotron, Container, Card, Button, Form, Alert, Row, Col } from "react-bootstrap";
-import table from "../../assets/table.png"
+import check from "../../assets/check.png"
 
 
 
@@ -47,7 +47,7 @@ function LandingRowOne() {
             </div> */}
 
            
-        <img className="LandingRowOne_Image d-none d-lg-block" src={table} alt="trying to get it to load"/>
+        <img className="LandingRowOne_Image d-none d-lg-block" src={check} alt="trying to get it to load"/>
         
         <Container className="container">
         <h1 className="Display-4">WHY SHOULD YOU TRACK YOUR JOBS</h1>
