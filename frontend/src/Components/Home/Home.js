@@ -3,6 +3,7 @@ import { Container, Card, Col, CardColumns, Row, Button, Alert } from "react-boo
 import { useAuth } from "../../Context/AuthContext"
 import { Link, useHistory } from "react-router-dom"
 import JobForm from './JobForm';
+import Indeed from "../Indeed"
 
 
 
@@ -41,7 +42,7 @@ export default function Home() {
                 </Card.Body>
             </Card>
             <br></br>
-
+<Indeed></Indeed>
             <Row>
                 <Col className="col-12">
                     <JobForm></JobForm>
