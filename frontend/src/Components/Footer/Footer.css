@@ -1,0 +1,15 @@
+.footer-main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.LandingRowOne_Image {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    height: 30%;
+    width: 30%;
+    background-size: cover;
+    -webkit-background-size: 100% 100%;
+  }
