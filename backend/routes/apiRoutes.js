@@ -63,6 +63,27 @@ router.put("/employer-response/:id", (req, res) => {
     .catch((err) => alert(err));
 });
 
+//edit posted job
+
+router.put("/edit-job/:id", (req, res) => {
+  
+  db.job_track.update(
+  {
+    company_name: req.body.company_name,
+    job_title: req.body.job_title,
+    date_applied: req.body.date_applied,
+    city: req.body.city
+  },
+  {
+    where: {
+      id: req.params.id
+    }
+  })
+
+  .then((results) => res.send(results))
+  .catch((err) => console.log(err));
+});
+
 
 //delete job 
 router.put("/job-apps/:id", (req, res) => {
