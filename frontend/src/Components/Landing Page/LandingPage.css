@@ -167,7 +167,7 @@ btn-lg {
 }
 
 .fixed {
-  background-image: url("../../assets/business.png");
+  background-image: url("../../assets/table.png");
   z-index: -1;
 }
 
@@ -252,5 +252,13 @@ padding-top: 30px;
 font-size: 30px;
 color: rgb(164,77,139);
 ;
+
+}
+
+.LandingRowTwo{
+  display: flex;
+  margin-top: -40px;
+  padding-top: 300px;
+  padding-bottom: 300px;
 
 }

@@ -2,6 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom"
 
 import "./LandingPage.css"
+import LandingRowOne from "./LandingRowOne"
+import LandingRowTwo from "./LandingRowTwo"
+
 
 
 function LandingPage() {
@@ -32,67 +35,26 @@ function LandingPage() {
 
             </div>
 
-            <div id="whyCrypto" class="offset">
-                <div className="jumbotron">
-                    <div className="narrow">
+            
 
-                        <div className="col-12 text-center mb-5">
-                            <h2 className="heading">Why Should you track your jobs</h2>
-                        </div>
-
-                        <div className="row text-center">
-                            <div className="col-md-4">
-                                <div className="whyCrypto">
-                                    <i class="fab fa-bitcoin fa-4x mb-4" data-fa-transform></i>
-                                    <h3>Historical Data</h3>
-                                    <p>Use our API-driven chart feature to view your favorite cryptocurreny past data</p>
-                                </div>
-                            </div>
-
-                            <div className="col-md-4">
-                                <div className="whyCrypto">
-                                    <i class="far fa-newspaper fa-4x mb-4" data-fa-transform></i>
-                                    <h3>Real News - Now</h3>
-                                    <p>Gain Access to all the latest news</p>
-                                </div>
-                            </div>
-
-
-                            <div className="col-md-4">
-                                <div className="whyCrypto">
-                                    <i class="fas fa-table fa-4x mb-4" data-fa-transform></i>
-                                    <h3>Cryto Ticker Table</h3>
-                                    <p>Watch Top Crypto Currency Values</p>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-
-            </div>
+<LandingRowOne />
+<LandingRowTwo />
+<LandingRowOne />
+<LandingRowOne />
+<LandingRowOne />
+<LandingRowOne />
+<LandingRowOne />
+<LandingRowOne />
+<LandingRowOne />
+<LandingRowOne />
+<LandingRowOne />
+<LandingRowOne />
 
 
 
 
 
-            <div className="fixed-background" id="dark">
-
-                <div clasName="fixed-background" id="dark">
-
-                    <div className="row dark text-center">
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div className="fixed-wrap">
-                <div className="fixed"></div>
-
-            </div>
+            
         </div>
     );
 }
