@@ -1,8 +1,8 @@
 import React from 'react'
 import "./LandingPage.css"
 import "./LandingRowOne.css"
-import { Jumbotron, Container, Card, Button, Form, Alert, Row } from "react-bootstrap";
-import table from "../../assets/table.png"
+import { Jumbotron, Container, Card, Button, Form, Alert, Row, Col } from "react-bootstrap";
+import check from "../../assets/check.png"
 
 
 
@@ -46,12 +46,38 @@ function LandingRowOne() {
 
             </div> */}
 
-            
-        <img className="LandingRowOne_Image" src={table} alt="trying to get it to load"/>
+           
+        <img className="LandingRowOne_Image d-none d-lg-block" src={check} alt="trying to get it to load"/>
         
-        <Container>
-            <h1>HELLO THIS IS JUST A TEXT </h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam volutpat arcu vitae mauris volutpat, tristique porta libero venenatis. Pellentesque euismod tellus cursus elit sodales, at gravida quam vulputate. Proin cursus ante efficitur mi pretium, quis rhoncus nulla auctor. Sed blandit lacus ac diam rutrum, nec mollis erat venenatis. Fusce vestibulum, magna cursus ornare ullamcorper, dolor augue gravida lacus, quis sodales tortor tortor eu neque. Donec luctus, neque nec dignissim egestas, turpis magna efficitur erat, interdum maximus lacus ex vitae mi. Aenean sed augue justo. Phasellus nec bibendum diam. Aliquam erat volutpat. Ut nec risus vitae mauris tempor tempus eget vel tellus.</p>
+        <Container className="container">
+        <h1 className="Display-4">WHY SHOULD YOU TRACK YOUR JOBS</h1>
+           <Row  className="row">
+           
+                <Col sm="4" className="col">
+               <h2 className="headertwo">
+                   Reminders
+               </h2>
+               <p>
+                   Stay on top of your game by seeing real-time when you last applied
+               </p>
+                </Col>
+                <Col sm="4">
+                <h2 className="headertwo">
+                   Consistancy
+               </h2>
+               <p>
+                   Keeping a visable metric will help you stay modivated in your job search
+               </p>
+                </Col>
+                <Col sm="4">
+                <h2 className="headertwo">
+                   Modivation
+               </h2>
+               <p>
+                   Keeping a visable metric will help you stay modivated in your job search
+               </p>
+                </Col>
+            </Row> 
         </Container>
 
 

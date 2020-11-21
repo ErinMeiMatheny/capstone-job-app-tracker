@@ -1,6 +1,6 @@
 .Jumbotron{
     display: flex;
-    margin-bottom: 50vh;
+    margin-bottom: 30vh;
 }
 
 .LandingRowOne_Image {
@@ -11,4 +11,41 @@
     width: 30%;
     background-size: cover;
     -webkit-background-size: 100% 100%;
+    display: none;
+  }
+
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
+.container > h1 {
+    display: flex;
+    justify-content: center;
+    margin-top: .5em;
+    margin-bottom: .5em;
+    font-weight: 700;
+}
+
+  .row{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      padding-top: 2rem;
+  }
+
+  .col{
+      display: flex;
+     flex-direction: column;  
+
+    
+    
+    }
+  .headertwo {
+      display: flex;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 2em;
+      
   }

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom"
 import "./LandingPage.css"
 import LandingRowOne from "./LandingRowOne"
 import LandingRowTwo from "./LandingRowTwo"
+import Footer from "../Footer/Footer"
 
 import {Container, Row, Col} from "react-bootstrap"
 
@@ -21,7 +22,7 @@ function LandingPage() {
                      
                     <div className="backgroundImageTwo" />
                 
-           
+                    <div className="backgroundImageThree" />
 
         
             <div className="caption text-center">
@@ -39,13 +40,10 @@ function LandingPage() {
             </div>
 
         
-
-<LandingRowOne />
-
 <LandingRowOne />
 <LandingRowOne />
-
-
+<LandingRowOne />
+<Footer />
 
 
 
