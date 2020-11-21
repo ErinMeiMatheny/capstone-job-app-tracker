@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import { Container, Card, Button, Form, Alert } from "react-bootstrap";
 import { useAuth } from "../../Context/AuthContext";
 import { Link, useHistory} from "react-router-dom"
+import "./Signin.css"
 
 function Signin() {
   const emailRef = useRef();
@@ -11,14 +12,16 @@ function Signin() {
   const [loading, setLoading] = useState(false);
   const history = useHistory()
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
     
-    try {
+   try {
       setError("")
       setLoading(true)
-     signin(emailRef.current.value, passwordRef.current.value);
-      history.push('/Home')
+     await signin(emailRef.current.value, passwordRef.current.value);
+     console.log("checking push")
+      history.push('/home')
+      console.log("Checking push afterwards")
       
     } catch (error) {
       setError("Problems with signin!")
@@ -29,9 +32,9 @@ function Signin() {
   return (
     <React.Fragment>
       <Container>
-      <Card className="mt-5">
+      <Card className="cardClass mt-5">
        
-        <Card.Body>
+        <Card.Body className="formControl">
           <h3 className="text-center mb-4"> Sign In </h3>
           {error && <Alert varient="danger">{error}</Alert>}
           <Form onSubmit={handleSubmit}>
@@ -48,10 +51,11 @@ function Signin() {
             </Button>
           </Form>
         </Card.Body>
-      </Card>
-      <div className="w-110 text-center mt3">
+        <div className="w-110 text-center mt3">
         <Link to="/signup">Register Today!</Link>
       </div>
+      </Card>
+      
       </Container>
     </React.Fragment>
   );
