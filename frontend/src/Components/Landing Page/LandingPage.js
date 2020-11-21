@@ -5,6 +5,8 @@ import "./LandingPage.css"
 import LandingRowOne from "./LandingRowOne"
 import LandingRowTwo from "./LandingRowTwo"
 
+import {Container, Row, Col} from "react-bootstrap"
+
 
 
 function LandingPage() {
@@ -12,33 +14,34 @@ function LandingPage() {
 
     return (
 
+        
         <div className="main-page">
-            <div className="landing">
-                <div className="home-wrap">
-                    <div className="home-inner">
+            
+                    <div className="backgroundImageOne" />
+                     
+                    <div className="backgroundImageTwo" />
+                
+           
 
-                    </div>
-                </div>
-            </div>
-
+        
             <div className="caption text-center">
                 
                 
-                <h1 className="display-4">Job Tracker? Yes please!</h1>
+                <h1 className="leadText display-4">Job Tracker? Yes please!</h1>
                 <h4 className="lead">Discover the platform that helps you stay organized as you apply</h4>
                
-                <Link to="/Signin" className="nav-link-signIn">
-                    <div className="signInLink">
-                        <span className="nav-option-line-one">Start Tracking</span>
-                    </div>
-                </Link>
+                {/* <Link to="/Signin" className="spanTrackingLink">
+                    
+                        <span className="spanTracking">Start Tracking</span>
+                   
+                </Link> */}
 
             </div>
 
-            
+        
 
 <LandingRowOne />
-<LandingRowTwo />
+
 <LandingRowOne />
 <LandingRowOne />
 <LandingRowOne />

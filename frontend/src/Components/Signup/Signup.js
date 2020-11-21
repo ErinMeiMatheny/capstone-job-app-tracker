@@ -23,7 +23,7 @@ export default function Signup() {
       setError("")
       setLoading(true)
       signup(emailRef.current.value, passwordRef.current.value)
-      history.push("/Home")
+      history.push("/home")
     } catch {
       setError("Failed to create an account")
     }

@@ -1,7 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@300&display=swap');
 
 
-.landing {
+.main-page{
+  position: relative;
+}
+
+/* .landing {
   position: relative;
   width: 100%;
   height: 100vh;
@@ -14,21 +18,40 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-}
-.home-inner {
-  position: fixed;
-  display: table;
+  height: 100%;;
+} */
+.backgroundImageOne {
+  position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background-size: cover;
   background-position: center center;
   -webkit-transform: translateZ(0);
           transform: translateZ(0);
   will-change: transform;
+  z-index: -1;
+  background-image: url("../../assets/business.png");
+  background-color: white;
 }
+
+.backgroundImageTwo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center center;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  will-change: transform;
+  z-index: -2;
+  background-image: url("../../assets/table.png");
+  background-color: white;
+}
+
 
 /*--- iOS Fixed Background Image --*/
 .fixed-background {
@@ -118,17 +141,21 @@ img {
   text-transform: uppercase;
 }
 
-.home-inner {
-  background-image: url("../../assets/business.png");
-  background-color: white;
+
+
+
+.leadText{
+  text-shadow: 0 0 50px hsla(0,0%,0%,.4);
 }
+
 
 .caption {
     
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 100%;
-  max-width: 100%;
-  position: absolute;
-  top: 40%;
+ height: 100vh;
   /* Z index will let me display over content just FYI */
   z-index: 1;
   color: white;
@@ -141,10 +168,10 @@ img {
   display: flex;
   margin-left: 5%;
   font-size: 3.0rem;
-  font-weight: 600;
+  font-weight: 800;
   letter-spacing: .05rem;
-  color: rgb(164,77,139);
-  text-shadow: .1rem, .1rem, .6rem rgb(161, 112, 157);
+  color: rgb(161,112,157);
+  
 }
 
 .caption h4 {
@@ -155,6 +182,8 @@ margin-left: 2.5%;
   color: rgb(164,77,139);
   border-color: purple;
 }
+
+
 
 btn-lg {
  font-size: 2rem;
@@ -227,11 +256,7 @@ btn-lg {
   height: 200px;
 }
 
-#signIn {
-  width: 50%;
-  margin-bottom: 5%;
-  margin-top: 2%;
-}
+
 
 .card-body{
   display: flex;
@@ -243,15 +268,17 @@ btn-lg {
   background-color: rgba(0,0,0, .1);
 }
 
-.signInLink{
-display: flex;
-margin-left: 16%;
+.spanTrackingLink{
+  display: inline-block;
+}
+
+.spanTracking{
+
 font-weight: 600;
 margin-top: 60px;
-padding-top: 30px;
 font-size: 30px;
 color: rgb(164,77,139);
-;
+
 
 }
 

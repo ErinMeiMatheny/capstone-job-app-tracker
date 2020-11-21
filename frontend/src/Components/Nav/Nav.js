@@ -1,10 +1,13 @@
 import React from "react";
 import "./Nav.css";
 import { Link } from "react-router-dom";
+import { useAuth } from "../../Context/AuthContext"
 
 
 
 function Nav() {
+
+  const { currentUser, signOut } = useAuth();
 
 
   return (
@@ -25,22 +28,35 @@ function Nav() {
 
       <div className="nav-nav">
         {/* 1st link */}
-        <Link to="/Signin" className="nav-link">
-          <div className="nav-option">
-            <span className="nav-option-line-one">Log in</span>
-            
-          </div>
-        </Link>
+        {currentUser ? (
+          <Link to="/" onClick={() => signOut()} className="nav-link">
+            <div className="nav-option">
+              <span className="nav-option-line-one">Log out</span>
 
-         {/* 2nd link */}
+            </div>
+          </Link>
+        ) : (
+          <>
+            <Link to="/Signin" className="nav-link">
+              <div className="nav-option">
+                <span className="nav-option-line-one">Log in</span>
+
+              </div>
+            </Link>
+
+        
         <Link to="/Signup" className="nav-link">
           <div className="nav-option">
-            <span className="nav-option-line-one">Register Today</span>
-           
+            <span className="nav-option-line-one">Register</span>
+
           </div>
         </Link>
-       
-        
+        </>
+        )
+
+        }
+
+
       </div>
     </nav>
   );
