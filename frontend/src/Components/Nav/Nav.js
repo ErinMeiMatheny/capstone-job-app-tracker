@@ -28,6 +28,12 @@ function Nav() {
 
       <div className="nav-nav">
         {/* 1st link */}
+        <Link to="/searchjobs" className="nav-link">
+              <div className="nav-option">
+                <span className="nav-option-line-one">Search Jobs</span>
+
+              </div>
+            </Link>
         {currentUser ? (
           <Link to="/" onClick={() => signOut()} className="nav-link">
             <div className="nav-option">
@@ -35,8 +41,10 @@ function Nav() {
 
             </div>
           </Link>
+          
         ) : (
           <>
+
             <Link to="/Signin" className="nav-link">
               <div className="nav-option">
                 <span className="nav-option-line-one">Log in</span>
