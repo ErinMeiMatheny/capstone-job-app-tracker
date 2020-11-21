@@ -3,6 +3,7 @@ import React from "react";
 import "./LandingPage.css"
 
 
+
 function LandingPage() {
   
 
@@ -13,6 +14,7 @@ function LandingPage() {
             />
 
            <h1 className="job_tracker_title">Welcome to our Job Tracker</h1>
+           
            
 
 
