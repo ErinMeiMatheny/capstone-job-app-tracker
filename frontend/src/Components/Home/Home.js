@@ -7,7 +7,7 @@ import JobForm from './JobForm';
 
 
 
-export default function Home() {
+export default function Dashboard() {
 
     const [error, setError] = useState("")
     const { currentUser, signOut } = useAuth()

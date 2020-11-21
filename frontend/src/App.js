@@ -2,10 +2,11 @@ import "./App.css";
 //Components
 import Signin from "./Components/Signin/Signin"
 import Signup from "./Components/Signup/Signup";
-import Home from "./Components/Home/Home"
+import Dashboard from "./Components/Home/Home"
 import HiddenRoute from "./Components/HiddenRoute"
 import LandingPage from "./Components/Landing Page/LandingPage"
-import Nav from "./Components/Nav/Nav"
+import Navbar from "./Components/Nav"
+import Home from "../src/pages/index"
 
 //State
 import { AuthProvider } from "./Context/AuthContext";
@@ -23,13 +24,13 @@ function App() {
        
           <Router>
             <AuthProvider>
-              <Nav />
+              <Navbar />
               
             <Switch>
-              <Route exact path="/" component={LandingPage} />
-              <Route path="/signup" component={Signup} />
-              <Route path="/signin" component={Signin} />
-              <HiddenRoute path="/home" component={Home} />
+              <Route exact path="/" component={LandingPage} exact/>
+              <Route path="/signup" component={Signup} exact />
+              <Route path="/signin" component={Signin} exact />
+              <HiddenRoute path="/home" component={Dashboard} />
 
             </Switch>
             
