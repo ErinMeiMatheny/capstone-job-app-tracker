@@ -12,13 +12,13 @@ function Signin() {
   const [loading, setLoading] = useState(false);
   const history = useHistory()
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
     
-    try {
+   try {
       setError("")
       setLoading(true)
-     signin(emailRef.current.value, passwordRef.current.value);
+     await signin(emailRef.current.value, passwordRef.current.value);
      console.log("checking push")
       history.push('/home')
       console.log("Checking push afterwards")

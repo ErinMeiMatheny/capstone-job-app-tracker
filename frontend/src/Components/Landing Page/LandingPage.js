@@ -44,14 +44,7 @@ function LandingPage() {
 
 <LandingRowOne />
 <LandingRowOne />
-<LandingRowOne />
-<LandingRowOne />
-<LandingRowOne />
-<LandingRowOne />
-<LandingRowOne />
-<LandingRowOne />
-<LandingRowOne />
-<LandingRowOne />
+
 
 
 
